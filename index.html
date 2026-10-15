@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10100f">
-  <meta name="description" content="Bonsai — gastronomia, drinks, música ao vivo e futebol no telão. Um lugar para viver grandes momentos.">
-  <title>Bonsai | Gastronomia, Drinks & Experiências</title>
+  <meta name="description" content="Bonsai — gastronomia, drinks, música ao vivo e futebol em um só lugar.">
+  <title>Bonsai | Bons momentos começam aqui</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,755 +15,954 @@
     :root {
       --bg: #10100f;
       --surface: #191917;
-      --surface-2: #22221e;
-      --gold: #d9b878;
-      --gold-light: #f0d7a3;
-      --text: #f7f3ec;
-      --muted: #a7a198;
-      --border: rgba(255,255,255,.10);
+      --gold: #d6b77a;
+      --cream: #f4efe5;
+      --muted: #aaa69d;
+      --line: rgba(255,255,255,.12);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
     body {
       background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.65;
-      overflow-x: hidden;
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    img { display: block; width: 100%; object-fit: cover; }
-    section { padding: 95px 7%; }
-    .container { max-width: 1240px; margin: auto; }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: .73rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.15;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
 
-    h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); }
-    .section-intro { color: var(--muted); max-width: 560px; margin-top: 14px; }
+    button {
+      font: inherit;
+    }
 
-    .section-heading {
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .nav {
+      min-height: 82px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: end;
-      gap: 25px;
-      margin-bottom: 42px;
+      gap: 28px;
+    }
+
+    .logo {
+      font-size: 25px;
+      letter-spacing: 7px;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 13px;
+      color: #e3ded4;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       padding: 14px 23px;
-      border-radius: 4px;
-      font-size: .85rem;
-      font-weight: 700;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #15130f;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 600;
       transition: .25s;
       cursor: pointer;
-      border: 1px solid transparent;
     }
 
-    .btn-primary { background: var(--gold); color: #17140f; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-outline { border-color: rgba(240,215,163,.6); color: var(--text); }
-    .btn-outline:hover { background: rgba(217,184,120,.12); }
-
-    /* NAVEGAÇÃO */
-    header {
-      min-height: 82px;
-      padding: 12px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      background: rgba(16,16,15,.96);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--gold);
+    .btn:hover {
+      background: transparent;
       color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      border-radius: 50%;
     }
 
-    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; letter-spacing: 2px; display: block; line-height: 1.2; }
-    .logo-sub { display: block; color: var(--muted); font-size: .55rem; letter-spacing: 2px; text-transform: uppercase; }
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border-color: rgba(255,255,255,.45);
+    }
 
-    nav { display: flex; align-items: center; gap: 22px; }
-    nav a { font-size: .79rem; color: #d0cbc2; transition: .2s; white-space: nowrap; }
-    nav a:hover { color: var(--gold); }
-    .menu-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.7rem; cursor: pointer; }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #15130f;
+      border-color: var(--gold);
+    }
 
-    /* CAPA PRINCIPAL */
+    .menu-toggle {
+      display: none;
+      color: white;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
     .hero {
       min-height: 690px;
       display: flex;
       align-items: center;
       position: relative;
-      padding: 100px 7%;
       background:
-        linear-gradient(90deg, rgba(10,10,9,.95) 0%, rgba(10,10,9,.77) 43%, rgba(10,10,9,.20) 100%),
-        linear-gradient(0deg, rgba(10,10,9,.55), transparent 50%),
-        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2000&q=85') center/cover;
+        linear-gradient(90deg, rgba(10,10,9,.88) 0%, rgba(10,10,9,.57) 48%, rgba(10,10,9,.1) 100%),
+        linear-gradient(0deg, rgba(10,10,9,.55), transparent 45%),
+        url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2000&q=85") center/cover;
     }
 
-    .hero-content { max-width: 690px; position: relative; z-index: 1; }
-    .hero .eyebrow { display: flex; align-items: center; gap: 12px; }
-    .hero .eyebrow::before { content: ''; width: 34px; height: 1px; background: var(--gold); }
-
-    .hero h1 { font-size: clamp(3.3rem, 7.6vw, 6.5rem); margin-bottom: 25px; }
-    .hero h1 span { color: var(--gold); font-style: italic; }
-    .hero p { color: #ddd6ca; max-width: 480px; font-size: 1rem; margin-bottom: 32px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-note { margin-top: 48px; color: #d0c8ba; font-size: .76rem; letter-spacing: 1px; }
-
-    /* EXPERIÊNCIA */
-    .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; align-items: center; }
-    .experience-image { position: relative; padding: 0 25px 25px 0; }
-    .experience-image img { height: 490px; border-radius: 4px; }
-    .experience-image::after {
-      content: ''; position: absolute; right: 0; bottom: 0; width: 70%; height: 75%;
-      border-right: 1px solid var(--gold); border-bottom: 1px solid var(--gold); z-index: -1;
-    }
-    .experience-copy p { color: var(--muted); margin: 22px 0; }
-    .experience-points { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
-    .point { border-top: 1px solid var(--border); padding-top: 15px; }
-    .point strong { display: block; color: var(--gold); font-size: .92rem; margin-bottom: 5px; }
-    .point span { color: var(--muted); font-size: .82rem; }
-
-    /* CARDÁPIO */
-    #cardapio { background: #151513; }
-    .menu-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
-    .menu-tab {
-      padding: 10px 18px; background: transparent; color: var(--muted);
-      border: 1px solid var(--border); border-radius: 3px; cursor: pointer; font-size: .82rem;
-    }
-    .menu-tab.active, .menu-tab:hover { background: var(--gold); color: #15120d; border-color: var(--gold); }
-    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .menu-item {
-      display: flex; gap: 18px; padding: 16px; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 7px; transition: .25s;
-    }
-    .menu-item:hover { border-color: rgba(217,184,120,.5); transform: translateY(-2px); }
-    .menu-item img { width: 112px; height: 112px; flex-shrink: 0; border-radius: 4px; }
-    .menu-item-info { flex: 1; min-width: 0; }
-    .menu-item-top { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
-    .menu-item h3 { font-size: 1.15rem; }
-    .menu-item .price { color: var(--gold); font-weight: 700; font-size: .9rem; white-space: nowrap; }
-    .menu-item p { color: var(--muted); font-size: .78rem; margin-top: 9px; line-height: 1.6; }
-    .menu-disclaimer { color: var(--muted); font-size: .76rem; margin-top: 25px; }
-
-    /* SHOWS AO VIVO */
-    .shows-banner {
-      display: grid; grid-template-columns: 1fr 1fr; min-height: 400px;
-      background: var(--surface); border: 1px solid var(--border);
-    }
-    .shows-image { min-height: 350px; background: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1100&q=85') center/cover; }
-    .shows-copy { padding: 55px; display: flex; flex-direction: column; justify-content: center; align-items: start; }
-    .shows-copy h2 { margin-bottom: 18px; }
-    .shows-copy p { color: var(--muted); margin-bottom: 24px; }
-    .show-label { color: var(--gold); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-
-    /* FUTEBOL NO TELÃO */
-    .football-section {
-      background:
-        radial-gradient(ellipse at top left, rgba(61, 91, 49, .13), transparent 55%),
-        #10100f;
+    .hero-content {
+      max-width: 610px;
+      padding-top: 75px;
     }
 
-    .football-banner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 440px;
-      background: #191917;
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .football-image {
-      position: relative;
-      min-height: 400px;
-      background:
-        linear-gradient(0deg, rgba(8,12,8,.45), transparent 65%),
-        url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1100&q=85') center/cover;
-    }
-
-    .football-badge {
-      position: absolute;
-      left: 25px;
-      bottom: 25px;
-      padding: 10px 15px;
-      background: var(--gold);
-      color: #17140f;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    .football-content {
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .football-content h2 {
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
-    .football-content h2 span {
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(43px, 6vw, 72px);
+      letter-spacing: -1.8px;
+      margin-bottom: 22px;
+    }
+
+    h1 span, h2 span {
       color: var(--gold);
-      font-style: italic;
     }
 
-    .football-content > p {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-bottom: 24px;
+    .hero p {
+      max-width: 420px;
+      color: #dedbd3;
+      font-size: 15px;
+      margin-bottom: 30px;
     }
 
-    .football-features {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* BENEFÍCIOS */
+
+    .features {
+      background: #f3efe7;
+      color: #181713;
+      padding: 35px 0;
+    }
+
+    .features-grid {
       display: grid;
-      gap: 17px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 0;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border: 1px solid #d7c9ad;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      color: #80683f;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .feature small {
+      color: #77736c;
+      font-size: 11px;
+    }
+
+    /* EXPERIÊNCIA */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 4vw, 48px);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 360px;
+      font-size: 13px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+    }
+
+    .experience-card {
+      min-height: 440px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .experience-card img {
+      height: 100%;
+      min-height: 440px;
+      transition: transform .6s;
+    }
+
+    .experience-card:hover img,
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.88), transparent 65%);
+    }
+
+    .experience-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+    }
+
+    .experience-info span {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+    }
+
+    .experience-info h3 {
+      font-size: 31px;
+      margin: 6px 0;
+    }
+
+    .experience-info p {
+      color: #d5d1c8;
+      font-size: 12px;
+      max-width: 330px;
+    }
+
+    /* CARDÁPIO */
+
+    .menu-section {
+      background: #f3efe7;
+      color: #171613;
+    }
+
+    .menu-section .eyebrow {
+      color: #8b7040;
+    }
+
+    .menu-section .section-heading p {
+      color: #706d65;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .menu-card {
+      background: #fffdf8;
+      overflow: hidden;
+    }
+
+    .menu-card img {
+      height: 235px;
+      transition: transform .5s;
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .menu-card .card-body {
+      padding: 22px;
+    }
+
+    .menu-card h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      font-size: 12px;
+      color: #77736c;
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #80683f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* FUTEBOL */
+
+    .football {
+      min-height: 410px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(10,12,10,.94), rgba(10,12,10,.65) 52%, rgba(10,12,10,.15)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .football-content {
+      max-width: 560px;
+    }
+
+    .football h2 {
+      font-size: clamp(38px, 5vw, 57px);
+      margin-bottom: 18px;
+    }
+
+    .football p {
+      color: #d5d2ca;
+      max-width: 390px;
+      font-size: 14px;
       margin-bottom: 28px;
     }
 
-    .football-features > div {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .football-features > div > span {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      background: #28271f;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .football-features strong,
-    .football-features small {
-      display: block;
-    }
-
-    .football-features strong { font-size: .85rem; }
-    .football-features small { color: var(--muted); font-size: .76rem; }
-
     /* GALERIA */
+
     .gallery-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr;
       grid-template-rows: 220px 220px;
       gap: 14px;
     }
-    .gallery-grid img { height: 100%; border-radius: 5px; transition: .35s; }
-    .gallery-grid a { overflow: hidden; border-radius: 5px; }
-    .gallery-grid a:hover img { transform: scale(1.05); }
-    .gallery-grid a:first-child { grid-row: span 2; }
+
+    .gallery-item {
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform .6s;
+    }
 
     /* CONTATO */
-    #contato { background: #151513; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; }
-    .contact-copy > p { color: var(--muted); margin: 18px 0 28px; max-width: 440px; }
-    .contact-detail { display: flex; gap: 16px; margin: 23px 0; }
-    .contact-icon { color: var(--gold); font-size: 1.2rem; width: 28px; flex-shrink: 0; }
-    .contact-detail strong { display: block; font-size: .9rem; margin-bottom: 3px; }
-    .contact-detail span, .contact-detail a { color: var(--muted); font-size: .85rem; }
-    .contact-card { background: var(--surface); padding: 35px; border: 1px solid var(--border); border-radius: 6px; }
-    .contact-card h3 { font-size: 1.65rem; margin-bottom: 12px; }
-    .contact-card p { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
-    .contact-card .btn { width: 100%; }
 
-    /* RODAPÉ */
-    footer { padding: 35px 7%; border-top: 1px solid var(--border); }
-    .footer-inner { max-width: 1240px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
-    .footer-copy { color: var(--muted); font-size: .76rem; text-align: right; }
-    .footer-links { display: flex; gap: 20px; margin-top: 8px; justify-content: end; }
-    .footer-links a { color: var(--gold); font-size: .78rem; }
-
-    /* BOTÃO FLUTUANTE WHATSAPP */
-    .whatsapp-float {
-      position: fixed; bottom: 23px; right: 23px; z-index: 90;
-      width: 57px; height: 57px; border-radius: 50%;
-      background: #25d366; color: white; display: grid; place-items: center;
-      box-shadow: 0 5px 24px rgba(0,0,0,.4); transition: .2s;
-    }
-    .whatsapp-float:hover { transform: translateY(-4px); }
-    .whatsapp-float svg { width: 28px; height: 28px; fill: currentColor; }
-
-    [hidden] { display: none !important; }
-
-    @media (max-width: 1050px) {
-      header { padding-left: 5%; padding-right: 5%; }
-      nav { gap: 13px; }
-      nav a { font-size: .72rem; }
-      .logo-sub { letter-spacing: 1px; }
-      .experience-grid { gap: 40px; }
+    .contact {
+      background: var(--surface);
+      padding: 65px 0;
+      border-top: 1px solid var(--line);
     }
 
-    @media (max-width: 800px) {
-      .menu-grid { grid-template-columns: 1fr; }
-      .experience-grid { gap: 40px; }
-      .shows-copy { padding: 35px; }
-      .gallery-grid { grid-template-rows: 180px 180px; }
+    .contact-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    @media (max-width: 700px) {
-      section { padding: 70px 6%; }
-      header { min-height: 72px; padding: 10px 6%; }
-      .menu-toggle { display: block; }
-      nav {
+    .contact h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0 22px;
+      background: #0b0b0a;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 27px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      font-size: 12px;
+      color: #d1cdc4;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #858179;
+      font-size: 10px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      z-index: 20;
+      right: 22px;
+      bottom: 22px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      box-shadow: 0 5px 25px #0006;
+      transition: transform .2s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 17px;
+      }
+
+      .nav > .btn {
+        display: none;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .experience-card,
+      .experience-card img {
+        min-height: 350px;
+      }
+
+      .menu-grid {
+        gap: 13px;
+      }
+
+      .menu-card img {
+        height: 175px;
+      }
+
+      .gallery-grid {
+        grid-template-rows: 180px 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 88%;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .logo {
+        font-size: 21px;
+        letter-spacing: 5px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 70px;
         left: 0;
-        right: 0;
-        padding: 20px 6% 25px;
-        background: #151513;
-        border-bottom: 1px solid var(--border);
+        width: 100%;
+        padding: 22px 6%;
+        background: #11110ff5;
+        border-bottom: 1px solid var(--line);
         flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        align-items: flex-start;
+        gap: 20px;
       }
-      nav.open { display: flex; }
-      nav a { padding: 13px 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
-      nav .btn { margin-top: 15px; }
-      .hero { min-height: 630px; padding: 85px 6%; background-position: 60% center; }
-      .hero h1 { font-size: clamp(3.2rem, 13vw, 5rem); }
-      .hero p { font-size: .94rem; }
-      .hero-note { margin-top: 35px; line-height: 2; }
-      .section-heading { align-items: start; flex-direction: column; margin-bottom: 30px; }
-      .experience-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
-      .experience-image img { height: 340px; }
-      .experience-copy { order: -1; }
-      .menu-item { padding: 12px; gap: 13px; }
-      .menu-item img { width: 94px; height: 100px; }
-      .menu-item h3 { font-size: 1rem; }
-      .menu-item .price { font-size: .8rem; }
-      .shows-banner, .football-banner { grid-template-columns: 1fr; }
-      .shows-image { min-height: 240px; }
-      .shows-copy { padding: 30px 25px; }
-      .football-image { min-height: 260px; }
-      .football-content { padding: 30px 24px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; gap: 9px; }
-      .gallery-grid a:first-child { grid-row: auto; }
-      .gallery-grid a:last-child { grid-column: span 2; }
-      .contact-card { padding: 25px; }
-      .footer-inner { flex-direction: column; align-items: start; }
-      .footer-copy { text-align: left; }
-      .footer-links { justify-content: start; }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 650px;
+        background-position: 60% center;
+      }
+
+      .hero-content {
+        padding-top: 80px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .features {
+        padding: 25px 0;
+      }
+
+      .features-grid {
+        gap: 12px;
+      }
+
+      .feature {
+        align-items: flex-start;
+        gap: 9px;
+      }
+
+      .feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .feature strong {
+        font-size: 11px;
+      }
+
+      .feature small {
+        font-size: 10px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 25px;
+      }
+
+      .experience-grid,
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card,
+      .experience-card img {
+        min-height: 360px;
+      }
+
+      .menu-card img {
+        height: 230px;
+      }
+
+      .football {
+        min-height: 430px;
+        background-position: 58% center;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 150px 150px;
+        gap: 10px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .contact-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 18px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .whatsapp {
+        width: 49px;
+        height: 49px;
+        right: 15px;
+        bottom: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <a class="logo" href="#inicio" aria-label="Bonsai - início">
-      <span class="logo-mark">B</span>
-      <span>
-        <span class="logo-name">bonsai</span>
-        <span class="logo-sub">Gastronomia & experiências</span>
-      </span>
-    </a>
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="logo">BON<span>SAI</span></a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#futebol">Futebol</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-    <nav id="mainNav">
-      <a href="#experiencia">A Bonsai</a>
-      <a href="#cardapio">Cardápio</a>
-      <a href="#shows">Shows ao vivo</a>
-      <a href="#futebol">Futebol no telão</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato" class="btn btn-primary">Entre em contato ↗</a>
-    </nav>
+      <a href="#contato" class="btn btn-outline">Conheça a Bonsai ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    </div>
   </header>
 
   <main>
-    <!-- CAPA -->
     <section class="hero" id="inicio">
-      <div class="hero-content">
-        <div class="eyebrow">Seu próximo momento especial</div>
-        <h1>Boas noites.<br>Grandes <span>momentos.</span></h1>
-        <p>Sabores que surpreendem, drinks especiais, música ao vivo e futebol no telão em um ambiente feito para aproveitar cada instante.</p>
-        <div class="hero-actions">
-          <a href="#cardapio" class="btn btn-primary">Conheça nosso cardápio ↗</a>
-          <a href="#shows" class="btn btn-outline">Descubra os shows</a>
-        </div>
-        <div class="hero-note">GASTRONOMIA · DRINKS · MÚSICA AO VIVO · FUTEBOL</div>
-      </div>
-    </section>
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Gastronomia · Drinks · Experiências</div>
+          <h1>Boas noites.<br>Grandes <span>momentos.</span></h1>
+          <p>O lugar certo para reunir os amigos, aproveitar bons sabores e viver momentos especiais.</p>
 
-    <!-- EXPERIÊNCIA -->
-    <section id="experiencia">
-      <div class="container experience-grid">
-        <div class="experience-image">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85" alt="Ambiente aconchegante de restaurante com iluminação quente" loading="lazy">
-        </div>
-        <div class="experience-copy">
-          <div class="eyebrow">Muito além de sair de casa</div>
-          <h2>Um lugar para<br>viver o momento.</h2>
-          <p>A Bonsai é o ponto de encontro para quem aprecia boa gastronomia, bebidas especiais, música e diversão.</p>
-          <p>Seja para reunir os amigos, curtir um show, torcer pelo seu time ou aproveitar uma boa refeição, queremos fazer parte da sua próxima história.</p>
-          <div class="experience-points">
-            <div class="point"><strong>🍽️ Gastronomia</strong><span>Sabores para compartilhar</span></div>
-            <div class="point"><strong>🍸 Drinks especiais</strong><span>Brinde aos bons momentos</span></div>
-            <div class="point"><strong>🎵 Música ao vivo</strong><span>Noites com outra energia</span></div>
-            <div class="point"><strong>⚽ Futebol no telão</strong><span>Torça com sua turma</span></div>
+          <div class="hero-actions">
+            <a href="#experiencia" class="btn">Descubra a Bonsai ↗</a>
+            <a href="#cardapio" class="btn btn-outline">Explorar cardápio</a>
           </div>
-          <a href="#contato" class="btn btn-outline">Venha conhecer ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- CARDÁPIO -->
-    <section id="cardapio">
+    <div class="features">
+      <div class="container features-grid">
+        <div class="feature">
+          <div class="feature-icon">✦</div>
+          <div>
+            <strong>Boa gastronomia</strong>
+            <small>Sabores para aproveitar</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">♬</div>
+          <div>
+            <strong>Música ao vivo</strong>
+            <small>Noites com mais energia</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◉</div>
+          <div>
+            <strong>Drinks especiais</strong>
+            <small>Seu brinde favorito</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⚽</div>
+          <div>
+            <strong>Futebol no telão</strong>
+            <small>Torça com a galera</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="experiencia">
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">Feito para despertar os sentidos</div>
-            <h2>Nosso cardápio</h2>
-            <p class="section-intro">Do primeiro petisco ao último brinde, escolha seu próximo favorito.</p>
+            <div class="eyebrow">Um lugar, várias experiências</div>
+            <h2>Do seu jeito.<br><span>No seu momento.</span></h2>
           </div>
-          <a href="#contato" class="btn btn-outline">Consulte opções ↗</a>
+          <p>Para relaxar, comemorar ou simplesmente aproveitar a noite.</p>
         </div>
 
-        <div class="menu-tabs" role="group" aria-label="Categorias do cardápio">
-          <button class="menu-tab active" data-category="todos" aria-pressed="true">Tudo</button>
-          <button class="menu-tab" data-category="comidas" aria-pressed="false">Refeições & porções</button>
-          <button class="menu-tab" data-category="drinks" aria-pressed="false">Drinks</button>
-          <button class="menu-tab" data-category="bebidas" aria-pressed="false">Bebidas</button>
+        <div class="experience-grid">
+          <a href="#cardapio" class="experience-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85" alt="Ambiente aconchegante de restaurante" loading="lazy">
+            <div class="experience-info">
+              <span>01 · Gastronomia</span>
+              <h3>Sabores que aproximam.</h3>
+              <p>Boa comida e momentos que merecem ser compartilhados.</p>
+            </div>
+          </a>
+
+          <a href="#futebol" class="experience-card">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85" alt="Campo de futebol" loading="lazy">
+            <div class="experience-info">
+              <span>02 · Esporte e diversão</span>
+              <h3>A emoção é coletiva.</h3>
+              <p>Encontre a galera e viva cada lance com intensidade.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Feito para aproveitar</div>
+            <h2>Uma boa escolha<br><span>muda a noite.</span></h2>
+          </div>
+          <p>Seu prato, sua bebida e a companhia certa.</p>
         </div>
 
         <div class="menu-grid">
-          <article class="menu-item" data-category="comidas">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80" alt="Carne grelhada servida com acompanhamentos" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Especial da casa</h3><span class="price">Consultar</span></div>
-              <p>Uma opção saborosa para transformar sua refeição em um momento especial.</p>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Porção preparada para compartilhar" loading="lazy">
+            <div class="card-body">
+              <h3>Porções & pratos</h3>
+              <p>Opções para dividir ou aproveitar sozinho.</p>
+              <a href="#contato" class="card-link">Conhecer opções ↗</a>
             </div>
           </article>
 
-          <article class="menu-item" data-category="comidas">
-            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=350&q=80" alt="Porção de batatas crocantes" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Porções para compartilhar</h3><span class="price">Consultar</span></div>
-              <p>Petiscos para acompanhar a conversa e curtir com os amigos.</p>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=85" alt="Drinks preparados em bar" loading="lazy">
+            <div class="card-body">
+              <h3>Drinks & coquetéis</h3>
+              <p>Uma seleção para brindar bons momentos.</p>
+              <a href="#contato" class="card-link">Conhecer opções ↗</a>
             </div>
           </article>
 
-          <article class="menu-item" data-category="comidas">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=350&q=80" alt="Pizza preparada com ingredientes frescos" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Sabores irresistíveis</h3><span class="price">Consultar</span></div>
-              <p>Alternativas para matar a fome e aproveitar cada pedaço.</p>
-            </div>
-          </article>
-
-          <article class="menu-item" data-category="drinks">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=350&q=80" alt="Drinks especiais preparados no bar" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Drinks autorais</h3><span class="price">Consultar</span></div>
-              <p>Combinações refrescantes para brindar aos bons momentos.</p>
-            </div>
-          </article>
-
-          <article class="menu-item" data-category="drinks">
-            <img src="https://images.unsplash.com/photo-1536935338788846bb9981813?auto=format&fit=crop&w=350&q=80" alt="Coquetel colorido servido com gelo" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Clássicos do bar</h3><span class="price">Consultar</span></div>
-              <p>Clássicos que combinam com uma noite especial.</p>
-            </div>
-          </article>
-
-          <article class="menu-item" data-category="bebidas">
-            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=350&q=80" alt="Bebida gelada servida com gelo e limão" loading="lazy">
-            <div class="menu-item-info">
-              <div class="menu-item-top"><h3>Bebidas refrescantes</h3><span class="price">Consultar</span></div>
-              <p>Opções geladas para acompanhar sua experiência na Bonsai.</p>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=800&q=85" alt="Bebida refrescante com gelo" loading="lazy">
+            <div class="card-body">
+              <h3>Bebidas</h3>
+              <p>Boas opções para acompanhar a noite.</p>
+              <a href="#contato" class="card-link">Conhecer opções ↗</a>
             </div>
           </article>
         </div>
-
-        <p class="menu-disclaimer">* Imagens ilustrativas. Consulte o cardápio atualizado, a disponibilidade e os preços diretamente com a Bonsai.</p>
       </div>
     </section>
 
-    <!-- SHOWS AO VIVO -->
-    <section id="shows">
+    <section class="football" id="futebol">
       <div class="container">
-        <div class="shows-banner">
-          <div class="shows-image" role="img" aria-label="Show musical com iluminação de palco"></div>
-          <div class="shows-copy">
-            <div class="show-label">A noite tem trilha sonora</div>
-            <h2>O melhor da música, ao vivo.</h2>
-            <p>Prepare-se para noites especiais, artistas incríveis e aquela energia que só a música ao vivo proporciona.</p>
-            <p>Quer saber quem vai subir ao palco? Entre em contato e consulte a próxima programação.</p>
-            <a href="#contato" class="btn btn-primary">Consultar agenda de shows ↗</a>
-          </div>
+        <div class="football-content">
+          <div class="eyebrow">Aqui a torcida acontece</div>
+          <h2>Seu time em campo.<br><span>A galera reunida.</span></h2>
+          <p>Jogo no telão, bebidas geladas e aquela emoção que só o futebol proporciona.</p>
+          <a href="#contato" class="btn">Consulte os próximos jogos ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- FUTEBOL NO TELÃO -->
-    <section id="futebol" class="football-section">
-      <div class="container">
-        <div class="football-banner">
-          <div class="football-image" role="img" aria-label="Ambiente esportivo para assistir a partidas de futebol">
-            <span class="football-badge">DIA DE JOGO É NA BONSAI</span>
-          </div>
-
-          <div class="football-content">
-            <div class="eyebrow">A emoção fica ainda melhor aqui</div>
-            <h2>Seu time em campo.<br><span>A galera reunida.</span></h2>
-
-            <p>Chame os amigos, escolha sua bebida favorita e venha acompanhar os grandes jogos de futebol no telão da Bonsai. Aqui, cada lance merece uma comemoração!</p>
-
-            <div class="football-features">
-              <div>
-                <span>⚽</span>
-                <div>
-                  <strong>Jogos no telão</strong>
-                  <small>Acompanhe cada lance</small>
-                </div>
-              </div>
-
-              <div>
-                <span>🍻</span>
-                <div>
-                  <strong>Bebidas e porções</strong>
-                  <small>O combo perfeito para torcer</small>
-                </div>
-              </div>
-
-              <div>
-                <span>👥</span>
-                <div>
-                  <strong>Com a sua turma</strong>
-                  <small>Mais emoção compartilhada</small>
-                </div>
-              </div>
-            </div>
-
-            <a href="#contato" class="btn btn-primary">Consulte os próximos jogos ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERIA -->
     <section id="galeria">
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">Um pouco da nossa atmosfera</div>
-            <h2>Momentos Bonsai</h2>
-            <p class="section-intro">Boa comida, luzes, música, futebol e encontros que merecem ser lembrados.</p>
+            <div class="eyebrow">Um pouco da Bonsai</div>
+            <h2>O clima você<br><span>vai sentir de perto.</span></h2>
           </div>
+          <p>Seu próximo lugar favorito pode estar aqui.</p>
         </div>
 
         <div class="gallery-grid">
-          <a href="#contato" aria-label="Conheça o ambiente da Bonsai">
-            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=85" alt="Restaurante e bar com ambiente noturno" loading="lazy">
-          </a>
-          <a href="#cardapio" aria-label="Conheça as bebidas">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=85" alt="Coquetéis preparados no bar" loading="lazy">
-          </a>
-          <a href="#shows" aria-label="Saiba mais sobre os shows">
-            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=85" alt="Público curtindo música ao vivo" loading="lazy">
-          </a>
-          <a href="#cardapio" aria-label="Conheça nossas refeições">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=85" alt="Prato preparado com ingredientes frescos" loading="lazy">
-          </a>
-          <a href="#futebol" aria-label="Saiba mais sobre futebol na Bonsai">
-            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=85" alt="Campo de futebol" loading="lazy">
-          </a>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=85" alt="Interior de bar e restaurante" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=85" alt="Coquetel preparado no bar" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=85" alt="Apresentação musical ao vivo" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=700&q=85" alt="Amigos reunidos à mesa" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=700&q=85" alt="Bebida refrescante" loading="lazy">
+          </div>
         </div>
-        <p class="menu-disclaimer">Imagens ilustrativas. Substitua por fotos reais da Bonsai para apresentar a identidade autêntica do espaço.</p>
       </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contato">
-      <div class="container contact-grid">
-        <div class="contact-copy">
+    <section class="contact" id="contato">
+      <div class="container contact-inner">
+        <div>
           <div class="eyebrow">Sua próxima noite começa aqui</div>
-          <h2>Vamos nos encontrar?</h2>
-          <p>Quer conhecer o espaço, consultar a agenda de shows, saber quais jogos serão transmitidos ou tirar dúvidas sobre o cardápio? Fale com a equipe da Bonsai.</p>
-
-          <div class="contact-detail">
-            <span class="contact-icon">⌖</span>
-            <div><strong>Onde estamos</strong><span>Endereço a confirmar</span></div>
-          </div>
-
-          <div class="contact-detail">
-            <span class="contact-icon">◷</span>
-            <div><strong>Horários de funcionamento</strong><span>Consulte os horários com nossa equipe.</span></div>
-          </div>
-
-          <div class="contact-detail">
-            <span class="contact-icon">♫</span>
-            <div><strong>Shows e futebol</strong><span>Consulte as próximas atrações e partidas.</span></div>
-          </div>
+          <h2>Vamos nos encontrar<br><span>na Bonsai?</span></h2>
+          <p>Chame a gente e consulte informações, eventos e próximos jogos.</p>
         </div>
 
-        <div class="contact-card">
-          <div class="eyebrow">Fale com a gente</div>
-          <h3>A Bonsai espera por você.</h3>
-          <p>Entre em contato para obter informações sobre o cardápio, os shows, os jogos no telão e o funcionamento da casa.</p>
-          <a href="#contato" class="btn btn-primary" id="contactButton">Fale com a Bonsai ↗</a>
-          <p style="font-size:.73rem;margin:17px 0 0">Configure o WhatsApp oficial da empresa para ativar o contato direto.</p>
-        </div>
+        <a href="#" class="btn whatsapp-link">Fale com a gente ↗</a>
       </div>
     </section>
   </main>
 
-  <!-- RODAPÉ -->
   <footer>
-    <div class="footer-inner">
-      <a class="logo" href="#inicio">
-        <span class="logo-mark">B</span>
-        <span>
-          <span class="logo-name">bonsai</span>
-          <span class="logo-sub">Gastronomia & experiências</span>
-        </span>
-      </a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo">BON<span>SAI</span></a>
+          <p>Boas noites. Grandes momentos.</p>
+        </div>
 
-      <div class="footer-copy">
-        <span>© <span id="year"></span> Bonsai. Todos os direitos reservados.</span>
         <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#experiencia">Experiência</a>
           <a href="#cardapio">Cardápio</a>
-          <a href="#shows">Shows</a>
           <a href="#futebol">Futebol</a>
           <a href="#contato">Contato</a>
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Bonsai. Todos os direitos reservados.</span>
+        <span>Feito para bons momentos.</span>
+      </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLUTUANTE -->
-  <a class="whatsapp-float" id="whatsappFloat" href="#contato" aria-label="Fale com a Bonsai pelo WhatsApp" title="WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16 .7A15.1 15.1 0 0 0 3 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .7zm0 27.6c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.3zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.3-.5.3-.9.1-.4-.2-1.6-.6-3.1-2-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2-1.2-2.7-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.4 1.3-1.4 3.1s1.4 3.6 1.6 3.8c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
-    </svg>
-  </a>
+  <a href="#" class="whatsapp whatsapp-link" aria-label="Fale com a Bonsai pelo WhatsApp">◉</a>
 
   <script>
-    // CONFIGURE COM O WHATSAPP OFICIAL DA BONSAI.
-    // Formato: código do país + DDD + número, somente números.
-    // Exemplo fictício: 5533999999999
+    // COLOQUE O WHATSAPP DA BONSAI ABAIXO:
+    // Exemplo: 5533999999999 (55 + DDD + número)
     const BONSAI_WHATSAPP = "";
 
     const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+    const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", () => {
-      const open = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(open));
-      menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-      menuToggle.textContent = open ? "×" : "☰";
+      navLinks.classList.toggle("open");
+      menuToggle.textContent =
+        navLinks.classList.contains("open") ? "✕" : "☰";
     });
 
-    mainNav.querySelectorAll("a").forEach(link => {
+    document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menu");
+        navLinks.classList.remove("open");
         menuToggle.textContent = "☰";
       });
     });
 
-    // FILTRO DO CARDÁPIO
-    document.querySelectorAll(".menu-tab").forEach(button => {
-      button.addEventListener("click", () => {
-        const category = button.dataset.category;
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-        document.querySelectorAll(".menu-tab").forEach(tab => {
-          const active = tab === button;
-          tab.classList.toggle("active", active);
-          tab.setAttribute("aria-pressed", String(active));
-        });
+    document.querySelectorAll(".whatsapp-link").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
 
-        document.querySelectorAll(".menu-item").forEach(item => {
-          item.hidden = category !== "todos" && item.dataset.category !== category;
-        });
-      });
-    });
+        if (!BONSAI_WHATSAPP) {
+          alert("O WhatsApp ainda precisa ser configurado no código do site.");
+          return;
+        }
 
-    // ANO AUTOMÁTICO
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // CONFIGURAÇÃO DO WHATSAPP
-    function setupWhatsApp() {
-      const contactButton = document.getElementById("contactButton");
-      const floatButton = document.getElementById("whatsappFloat");
-
-      if (/^\d{12,15}$/.test(BONSAI_WHATSAPP)) {
         const message = encodeURIComponent(
-          "Olá! Gostaria de saber mais sobre a Bonsai, o cardápio, os shows e os jogos no telão."
+          "Olá! Acessei o site da Bonsai e gostaria de mais informações."
         );
 
-        const url = `https://wa.me/${BONSAI_WHATSAPP}?text=${message}`;
-
-        [contactButton, floatButton].forEach(button => {
-          button.href = url;
-          button.target = "_blank";
-          button.rel = "noopener noreferrer";
-        });
-
-        contactButton.textContent = "Fale com a gente pelo WhatsApp ↗";
-      } else {
-        contactButton.href = "#contato";
-        floatButton.href = "#contato";
-      }
-    }
-
-    setupWhatsApp();
+        window.open(
+          "https://wa.me/" + BONSAI_WHATSAPP + "?text=" + message,
+          "_blank"
+        );
+      });
+    });
   </script>
+
 </body>
 </html>
