@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10100f">
-  <meta name="description" content="Bonsai — boa comida, drinks especiais e música ao vivo. Seu lugar para viver grandes momentos.">
-  <title>Bonsai | Gastronomia, Drinks & Música</title>
+  <meta name="description" content="Bonsai — gastronomia, drinks, música ao vivo e futebol no telão. Um lugar para viver grandes momentos.">
+  <title>Bonsai | Gastronomia, Drinks & Experiências</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,6 @@
       --text: #f7f3ec;
       --muted: #a7a198;
       --border: rgba(255,255,255,.10);
-      --radius: 14px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -89,13 +88,13 @@
 
     /* NAVEGAÇÃO */
     header {
-      height: 82px;
-      padding: 0 7%;
+      min-height: 82px;
+      padding: 12px 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      background: rgba(16,16,15,.94);
+      background: rgba(16,16,15,.96);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
@@ -122,15 +121,15 @@
       border-radius: 50%;
     }
 
-    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; letter-spacing: 2px; }
+    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; letter-spacing: 2px; display: block; line-height: 1.2; }
     .logo-sub { display: block; color: var(--muted); font-size: .55rem; letter-spacing: 2px; text-transform: uppercase; }
 
-    nav { display: flex; align-items: center; gap: 27px; }
-    nav a { font-size: .8rem; color: #d0cbc2; transition: .2s; }
+    nav { display: flex; align-items: center; gap: 22px; }
+    nav a { font-size: .79rem; color: #d0cbc2; transition: .2s; white-space: nowrap; }
     nav a:hover { color: var(--gold); }
     .menu-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.7rem; cursor: pointer; }
 
-    /* CAPA */
+    /* CAPA PRINCIPAL */
     .hero {
       min-height: 690px;
       display: flex;
@@ -187,10 +186,9 @@
     .menu-item h3 { font-size: 1.15rem; }
     .menu-item .price { color: var(--gold); font-weight: 700; font-size: .9rem; white-space: nowrap; }
     .menu-item p { color: var(--muted); font-size: .78rem; margin-top: 9px; line-height: 1.6; }
-
     .menu-disclaimer { color: var(--muted); font-size: .76rem; margin-top: 25px; }
 
-    /* SHOWS */
+    /* SHOWS AO VIVO */
     .shows-banner {
       display: grid; grid-template-columns: 1fr 1fr; min-height: 400px;
       background: var(--surface); border: 1px solid var(--border);
@@ -201,8 +199,104 @@
     .shows-copy p { color: var(--muted); margin-bottom: 24px; }
     .show-label { color: var(--gold); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
 
+    /* FUTEBOL NO TELÃO */
+    .football-section {
+      background:
+        radial-gradient(ellipse at top left, rgba(61, 91, 49, .13), transparent 55%),
+        #10100f;
+    }
+
+    .football-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+      background: #191917;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .football-image {
+      position: relative;
+      min-height: 400px;
+      background:
+        linear-gradient(0deg, rgba(8,12,8,.45), transparent 65%),
+        url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1100&q=85') center/cover;
+    }
+
+    .football-badge {
+      position: absolute;
+      left: 25px;
+      bottom: 25px;
+      padding: 10px 15px;
+      background: var(--gold);
+      color: #17140f;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .football-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .football-content h2 {
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      margin-bottom: 20px;
+    }
+
+    .football-content h2 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .football-content > p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 24px;
+    }
+
+    .football-features {
+      display: grid;
+      gap: 17px;
+      margin-bottom: 28px;
+    }
+
+    .football-features > div {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .football-features > div > span {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: #28271f;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .football-features strong,
+    .football-features small {
+      display: block;
+    }
+
+    .football-features strong { font-size: .85rem; }
+    .football-features small { color: var(--muted); font-size: .76rem; }
+
     /* GALERIA */
-    .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; grid-template-rows: 220px 220px; gap: 14px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 14px;
+    }
     .gallery-grid img { height: 100%; border-radius: 5px; transition: .35s; }
     .gallery-grid a { overflow: hidden; border-radius: 5px; }
     .gallery-grid a:hover img { transform: scale(1.05); }
@@ -213,7 +307,7 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; }
     .contact-copy > p { color: var(--muted); margin: 18px 0 28px; max-width: 440px; }
     .contact-detail { display: flex; gap: 16px; margin: 23px 0; }
-    .contact-icon { color: var(--gold); font-size: 1.2rem; width: 28px; }
+    .contact-icon { color: var(--gold); font-size: 1.2rem; width: 28px; flex-shrink: 0; }
     .contact-detail strong { display: block; font-size: .9rem; margin-bottom: 3px; }
     .contact-detail span, .contact-detail a { color: var(--muted); font-size: .85rem; }
     .contact-card { background: var(--surface); padding: 35px; border: 1px solid var(--border); border-radius: 6px; }
@@ -228,6 +322,7 @@
     .footer-links { display: flex; gap: 20px; margin-top: 8px; justify-content: end; }
     .footer-links a { color: var(--gold); font-size: .78rem; }
 
+    /* BOTÃO FLUTUANTE WHATSAPP */
     .whatsapp-float {
       position: fixed; bottom: 23px; right: 23px; z-index: 90;
       width: 57px; height: 57px; border-radius: 50%;
@@ -239,9 +334,16 @@
 
     [hidden] { display: none !important; }
 
-    @media (max-width: 900px) {
-      nav { gap: 15px; }
-      nav a { font-size: .75rem; }
+    @media (max-width: 1050px) {
+      header { padding-left: 5%; padding-right: 5%; }
+      nav { gap: 13px; }
+      nav a { font-size: .72rem; }
+      .logo-sub { letter-spacing: 1px; }
+      .experience-grid { gap: 40px; }
+    }
+
+    @media (max-width: 800px) {
+      .menu-grid { grid-template-columns: 1fr; }
       .experience-grid { gap: 40px; }
       .shows-copy { padding: 35px; }
       .gallery-grid { grid-template-rows: 180px 180px; }
@@ -249,12 +351,20 @@
 
     @media (max-width: 700px) {
       section { padding: 70px 6%; }
-      header { height: 72px; padding: 0 6%; }
+      header { min-height: 72px; padding: 10px 6%; }
       .menu-toggle { display: block; }
       nav {
-        display: none; position: absolute; top: 71px; left: 0; right: 0;
-        padding: 25px 6%; background: #151513; border-bottom: 1px solid var(--border);
-        flex-direction: column; align-items: stretch; gap: 0;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px 6% 25px;
+        background: #151513;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
       }
       nav.open { display: flex; }
       nav a { padding: 13px 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
@@ -262,19 +372,20 @@
       .hero { min-height: 630px; padding: 85px 6%; background-position: 60% center; }
       .hero h1 { font-size: clamp(3.2rem, 13vw, 5rem); }
       .hero p { font-size: .94rem; }
-      .hero-note { margin-top: 35px; }
+      .hero-note { margin-top: 35px; line-height: 2; }
       .section-heading { align-items: start; flex-direction: column; margin-bottom: 30px; }
       .experience-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
       .experience-image img { height: 340px; }
       .experience-copy { order: -1; }
-      .menu-grid { grid-template-columns: 1fr; }
       .menu-item { padding: 12px; gap: 13px; }
       .menu-item img { width: 94px; height: 100px; }
       .menu-item h3 { font-size: 1rem; }
       .menu-item .price { font-size: .8rem; }
-      .shows-banner { grid-template-columns: 1fr; }
+      .shows-banner, .football-banner { grid-template-columns: 1fr; }
       .shows-image { min-height: 240px; }
       .shows-copy { padding: 30px 25px; }
+      .football-image { min-height: 260px; }
+      .football-content { padding: 30px 24px; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; gap: 9px; }
       .gallery-grid a:first-child { grid-row: auto; }
       .gallery-grid a:last-child { grid-column: span 2; }
@@ -307,25 +418,28 @@
       <a href="#experiencia">A Bonsai</a>
       <a href="#cardapio">Cardápio</a>
       <a href="#shows">Shows ao vivo</a>
+      <a href="#futebol">Futebol no telão</a>
       <a href="#galeria">Galeria</a>
       <a href="#contato" class="btn btn-primary">Entre em contato ↗</a>
     </nav>
   </header>
 
   <main>
+    <!-- CAPA -->
     <section class="hero" id="inicio">
       <div class="hero-content">
         <div class="eyebrow">Seu próximo momento especial</div>
         <h1>Boas noites.<br>Grandes <span>momentos.</span></h1>
-        <p>Sabores que surpreendem, drinks especiais e música ao vivo em um ambiente feito para aproveitar cada instante.</p>
+        <p>Sabores que surpreendem, drinks especiais, música ao vivo e futebol no telão em um ambiente feito para aproveitar cada instante.</p>
         <div class="hero-actions">
           <a href="#cardapio" class="btn btn-primary">Conheça nosso cardápio ↗</a>
           <a href="#shows" class="btn btn-outline">Descubra os shows</a>
         </div>
-        <div class="hero-note">GASTRONOMIA &nbsp;·&nbsp; DRINKS &nbsp;·&nbsp; MÚSICA AO VIVO</div>
+        <div class="hero-note">GASTRONOMIA · DRINKS · MÚSICA AO VIVO · FUTEBOL</div>
       </div>
     </section>
 
+    <!-- EXPERIÊNCIA -->
     <section id="experiencia">
       <div class="container experience-grid">
         <div class="experience-image">
@@ -334,19 +448,20 @@
         <div class="experience-copy">
           <div class="eyebrow">Muito além de sair de casa</div>
           <h2>Um lugar para<br>viver o momento.</h2>
-          <p>A Bonsai é o ponto de encontro para quem aprecia boa gastronomia, bebidas especiais e noites com música e boas companhias.</p>
-          <p>Seja para reunir os amigos, curtir um show ou simplesmente aproveitar uma boa refeição, queremos fazer parte da sua próxima história.</p>
+          <p>A Bonsai é o ponto de encontro para quem aprecia boa gastronomia, bebidas especiais, música e diversão.</p>
+          <p>Seja para reunir os amigos, curtir um show, torcer pelo seu time ou aproveitar uma boa refeição, queremos fazer parte da sua próxima história.</p>
           <div class="experience-points">
             <div class="point"><strong>🍽️ Gastronomia</strong><span>Sabores para compartilhar</span></div>
             <div class="point"><strong>🍸 Drinks especiais</strong><span>Brinde aos bons momentos</span></div>
             <div class="point"><strong>🎵 Música ao vivo</strong><span>Noites com outra energia</span></div>
-            <div class="point"><strong>✨ Boa companhia</strong><span>O cenário ideal para reunir</span></div>
+            <div class="point"><strong>⚽ Futebol no telão</strong><span>Torça com sua turma</span></div>
           </div>
           <a href="#contato" class="btn btn-outline">Venha conhecer ↗</a>
         </div>
       </div>
     </section>
 
+    <!-- CARDÁPIO -->
     <section id="cardapio">
       <div class="container">
         <div class="section-heading">
@@ -419,6 +534,7 @@
       </div>
     </section>
 
+    <!-- SHOWS AO VIVO -->
     <section id="shows">
       <div class="container">
         <div class="shows-banner">
@@ -434,13 +550,60 @@
       </div>
     </section>
 
+    <!-- FUTEBOL NO TELÃO -->
+    <section id="futebol" class="football-section">
+      <div class="container">
+        <div class="football-banner">
+          <div class="football-image" role="img" aria-label="Ambiente esportivo para assistir a partidas de futebol">
+            <span class="football-badge">DIA DE JOGO É NA BONSAI</span>
+          </div>
+
+          <div class="football-content">
+            <div class="eyebrow">A emoção fica ainda melhor aqui</div>
+            <h2>Seu time em campo.<br><span>A galera reunida.</span></h2>
+
+            <p>Chame os amigos, escolha sua bebida favorita e venha acompanhar os grandes jogos de futebol no telão da Bonsai. Aqui, cada lance merece uma comemoração!</p>
+
+            <div class="football-features">
+              <div>
+                <span>⚽</span>
+                <div>
+                  <strong>Jogos no telão</strong>
+                  <small>Acompanhe cada lance</small>
+                </div>
+              </div>
+
+              <div>
+                <span>🍻</span>
+                <div>
+                  <strong>Bebidas e porções</strong>
+                  <small>O combo perfeito para torcer</small>
+                </div>
+              </div>
+
+              <div>
+                <span>👥</span>
+                <div>
+                  <strong>Com a sua turma</strong>
+                  <small>Mais emoção compartilhada</small>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contato" class="btn btn-primary">Consulte os próximos jogos ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
     <section id="galeria">
       <div class="container">
         <div class="section-heading">
           <div>
             <div class="eyebrow">Um pouco da nossa atmosfera</div>
             <h2>Momentos Bonsai</h2>
-            <p class="section-intro">Boa comida, luzes, música e encontros que merecem ser lembrados.</p>
+            <p class="section-intro">Boa comida, luzes, música, futebol e encontros que merecem ser lembrados.</p>
           </div>
         </div>
 
@@ -457,63 +620,73 @@
           <a href="#cardapio" aria-label="Conheça nossas refeições">
             <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=85" alt="Prato preparado com ingredientes frescos" loading="lazy">
           </a>
-          <a href="#contato" aria-label="Entre em contato com a Bonsai">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=85" alt="Interior aconchegante de restaurante" loading="lazy">
+          <a href="#futebol" aria-label="Saiba mais sobre futebol na Bonsai">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=85" alt="Campo de futebol" loading="lazy">
           </a>
         </div>
         <p class="menu-disclaimer">Imagens ilustrativas. Substitua por fotos reais da Bonsai para apresentar a identidade autêntica do espaço.</p>
       </div>
     </section>
 
+    <!-- CONTATO -->
     <section id="contato">
       <div class="container contact-grid">
         <div class="contact-copy">
           <div class="eyebrow">Sua próxima noite começa aqui</div>
           <h2>Vamos nos encontrar?</h2>
-          <p>Quer conhecer o espaço, consultar a agenda de shows ou tirar dúvidas sobre o cardápio? Fale com a equipe da Bonsai.</p>
+          <p>Quer conhecer o espaço, consultar a agenda de shows, saber quais jogos serão transmitidos ou tirar dúvidas sobre o cardápio? Fale com a equipe da Bonsai.</p>
 
           <div class="contact-detail">
             <span class="contact-icon">⌖</span>
             <div><strong>Onde estamos</strong><span>Endereço a confirmar</span></div>
           </div>
+
           <div class="contact-detail">
             <span class="contact-icon">◷</span>
             <div><strong>Horários de funcionamento</strong><span>Consulte os horários com nossa equipe.</span></div>
           </div>
+
           <div class="contact-detail">
             <span class="contact-icon">♫</span>
-            <div><strong>Programação musical</strong><span>Consulte as próximas atrações e eventos.</span></div>
+            <div><strong>Shows e futebol</strong><span>Consulte as próximas atrações e partidas.</span></div>
           </div>
         </div>
 
         <div class="contact-card">
           <div class="eyebrow">Fale com a gente</div>
           <h3>A Bonsai espera por você.</h3>
-          <p>Entre em contato para obter informações sobre o cardápio, os shows e o funcionamento da casa.</p>
-          <a href="#inicio" class="btn btn-primary" id="contactButton">Adicionar WhatsApp da Bonsai ↗</a>
-          <p style="font-size:.73rem;margin:17px 0 0">O canal de contato será ativado após a configuração do número oficial.</p>
+          <p>Entre em contato para obter informações sobre o cardápio, os shows, os jogos no telão e o funcionamento da casa.</p>
+          <a href="#contato" class="btn btn-primary" id="contactButton">Fale com a Bonsai ↗</a>
+          <p style="font-size:.73rem;margin:17px 0 0">Configure o WhatsApp oficial da empresa para ativar o contato direto.</p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- RODAPÉ -->
   <footer>
     <div class="footer-inner">
       <a class="logo" href="#inicio">
         <span class="logo-mark">B</span>
-        <span><span class="logo-name">bonsai</span><span class="logo-sub">Gastronomia & experiências</span></span>
+        <span>
+          <span class="logo-name">bonsai</span>
+          <span class="logo-sub">Gastronomia & experiências</span>
+        </span>
       </a>
+
       <div class="footer-copy">
         <span>© <span id="year"></span> Bonsai. Todos os direitos reservados.</span>
         <div class="footer-links">
           <a href="#cardapio">Cardápio</a>
           <a href="#shows">Shows</a>
+          <a href="#futebol">Futebol</a>
           <a href="#contato">Contato</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- WHATSAPP FLUTUANTE -->
   <a class="whatsapp-float" id="whatsappFloat" href="#contato" aria-label="Fale com a Bonsai pelo WhatsApp" title="WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path d="M16 .7A15.1 15.1 0 0 0 3 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .7zm0 27.6c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.3zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.3-.5.3-.9.1-.4-.2-1.6-.6-3.1-2-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2-1.2-2.7-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1.1.5-.4.4-1.4 1.3-1.4 3.1s1.4 3.6 1.6 3.8c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
@@ -521,8 +694,9 @@
   </a>
 
   <script>
-    // CONFIGURAÇÃO: troque pelo WhatsApp oficial da Bonsai,
-    // com código do país e DDD, somente números. Ex.: 5533999999999
+    // CONFIGURE COM O WHATSAPP OFICIAL DA BONSAI.
+    // Formato: código do país + DDD + número, somente números.
+    // Exemplo fictício: 5533999999999
     const BONSAI_WHATSAPP = "";
 
     const menuToggle = document.getElementById("menuToggle");
@@ -544,6 +718,7 @@
       });
     });
 
+    // FILTRO DO CARDÁPIO
     document.querySelectorAll(".menu-tab").forEach(button => {
       button.addEventListener("click", () => {
         const category = button.dataset.category;
@@ -560,22 +735,28 @@
       });
     });
 
+    // ANO AUTOMÁTICO
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // CONFIGURAÇÃO DO WHATSAPP
     function setupWhatsApp() {
       const contactButton = document.getElementById("contactButton");
       const floatButton = document.getElementById("whatsappFloat");
 
       if (/^\d{12,15}$/.test(BONSAI_WHATSAPP)) {
-        const message = encodeURIComponent("Olá! Gostaria de saber mais sobre a Bonsai.");
+        const message = encodeURIComponent(
+          "Olá! Gostaria de saber mais sobre a Bonsai, o cardápio, os shows e os jogos no telão."
+        );
+
         const url = `https://wa.me/${BONSAI_WHATSAPP}?text=${message}`;
-        contactButton.href = url;
+
+        [contactButton, floatButton].forEach(button => {
+          button.href = url;
+          button.target = "_blank";
+          button.rel = "noopener noreferrer";
+        });
+
         contactButton.textContent = "Fale com a gente pelo WhatsApp ↗";
-        contactButton.target = "_blank";
-        contactButton.rel = "noopener noreferrer";
-        floatButton.href = url;
-        floatButton.target = "_blank";
-        floatButton.rel = "noopener noreferrer";
       } else {
         contactButton.href = "#contato";
         floatButton.href = "#contato";
